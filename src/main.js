@@ -16,15 +16,16 @@ function clamp(value, min, max) {
 function updateHero() {
   if (!hero || !title) return;
 
-  const scrollable = Math.max(1, window.innerHeight * 0.92);
+  const heroHeight = hero.getBoundingClientRect().height || window.innerHeight;
+  const scrollable = Math.max(1, heroHeight);
   const progress = clamp(window.scrollY / scrollable, 0, 1);
   const eased = 1 - Math.pow(1 - progress, 3);
 
-  const startSize = Math.min(window.innerWidth * 0.32, window.innerHeight * 1.16);
+  const startSize = Math.min(window.innerWidth * 0.32, heroHeight * 1.16);
   const endSize = clamp(window.innerWidth * 0.16, 104, 220);
   let fontSize = startSize + (endSize - startSize) * eased;
   const titleWidth = 94 + 4 * eased;
-  const y = -window.innerHeight * 0.16 * eased;
+  const y = -heroHeight * 0.16 * eased;
   const widthAxis = 25 + 35 * eased;
   const upperAxis = 760 - 70 * eased;
   const ascenderAxis = 854 - 56 * eased;
