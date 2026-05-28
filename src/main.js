@@ -10,16 +10,15 @@ function clamp(value, min, max) {
 function updateHero() {
   if (!hero || !title) return;
 
-  const rect = hero.getBoundingClientRect();
-  const scrollable = Math.max(1, rect.height - window.innerHeight);
-  const progress = clamp(-rect.top / scrollable, 0, 1);
+  const scrollable = Math.max(1, window.innerHeight * 0.92);
+  const progress = clamp(window.scrollY / scrollable, 0, 1);
   const eased = 1 - Math.pow(1 - progress, 3);
 
   const startSize = Math.min(window.innerWidth * 0.38, window.innerHeight * 1.08);
   const endSize = clamp(window.innerWidth * 0.14, 92, 190);
   const fontSize = startSize + (endSize - startSize) * eased;
   const gap = window.innerWidth * 0.115 * eased;
-  const y = -window.innerHeight * 0.08 * eased;
+  const y = -window.innerHeight * 0.18 * eased;
 
   title.style.setProperty("--play-font-size", `${fontSize}px`);
   title.style.setProperty("--play-gap", `${gap}px`);

@@ -99,18 +99,20 @@ a {
 }
 
 .hero-scroll {
-  height: 220svh;
+  height: 100svh;
   position: relative;
   background: #f7f7f4;
 }
 
 .hero-sticky {
-  position: sticky;
-  top: 0;
+  position: fixed;
+  z-index: 5;
+  inset: 0;
   min-height: 100svh;
   display: grid;
   place-items: center;
   overflow: hidden;
+  pointer-events: none;
 }
 
 .hero-sticky::before {
@@ -122,6 +124,7 @@ a {
     linear-gradient(90deg, rgba(11, 15, 24, 0.025) 1px, transparent 1px);
   background-size: 100% 11.5vh, 12.5vw 100%;
   opacity: calc(1 - var(--play-progress) * 0.7);
+  pointer-events: none;
 }
 
 .play-title {
@@ -135,7 +138,7 @@ a {
   align-items: center;
   justify-content: center;
   gap: var(--play-gap);
-  color: #050505;
+  color: #f7f7f4;
   font-family: Antonio, Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
   font-size: var(--play-font-size);
   font-weight: 700;
@@ -144,7 +147,9 @@ a {
   text-transform: uppercase;
   transform: translateY(var(--play-y));
   white-space: nowrap;
+  mix-blend-mode: difference;
   will-change: font-size, gap, transform;
+  pointer-events: none;
 }
 
 .play-title span {
@@ -154,6 +159,7 @@ a {
 
 .games {
   margin-top: -1px;
+  position: relative;
   padding: 96px clamp(18px, 5vw, 72px) 112px;
   background: #0b0f18;
   color: #f8faf6;
@@ -287,7 +293,7 @@ a {
   }
 
   .hero-scroll {
-    height: 200svh;
+    height: 100svh;
   }
 
   .play-title {
