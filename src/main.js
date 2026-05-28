@@ -1,7 +1,13 @@
 import "./styles.css";
+import beGratefulVideo from "../assets/begrateful.mov?url";
+import youAreMyTimerVideo from "../assets/youaremytimer.mov?url";
 
 const hero = document.querySelector("[data-scroll-hero]");
 const title = document.querySelector("[data-play-title]");
+const videos = {
+  "be-grateful": beGratefulVideo,
+  "you-are-my-timer": youAreMyTimerVideo,
+};
 
 function clamp(value, min, max) {
   return Math.max(min, Math.min(max, value));
@@ -27,5 +33,10 @@ function updateHero() {
 }
 
 updateHero();
+document.querySelectorAll("[data-game-video]").forEach((video) => {
+  const key = video.dataset.gameVideo;
+  if (videos[key]) video.src = videos[key];
+});
+
 window.addEventListener("scroll", updateHero, { passive: true });
 window.addEventListener("resize", updateHero);
