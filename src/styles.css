@@ -12,8 +12,11 @@
   --play-width: 94vw;
   --play-y: 0px;
   --play-wdth: 25;
+  --play-wght: 1000;
   --play-ytas: 854;
   --play-ytuc: 760;
+  --play-scale: 1;
+  --play-opacity: 1;
   --play-progress: 0;
   --games-peek: clamp(140px, 20svh, 200px);
 }
@@ -75,19 +78,21 @@ a {
   color: #f8faf6;
   font-family: "Roboto Flex", Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
   font-size: var(--play-font-size);
-  font-weight: 1000;
+  font-weight: var(--play-wght);
   font-stretch: 50%;
   font-variation-settings:
     "opsz" 144,
     "wdth" var(--play-wdth),
+    "wght" var(--play-wght),
     "YTAS" var(--play-ytas),
     "YTUC" var(--play-ytuc);
   line-height: 0.68;
   letter-spacing: 0;
   text-transform: uppercase;
-  transform: translateY(var(--play-y));
+  opacity: var(--play-opacity);
+  transform: translateY(var(--play-y)) scale(var(--play-scale));
   white-space: nowrap;
-  will-change: font-size, width, height, transform;
+  will-change: font-size, width, height, transform, opacity, font-variation-settings;
   pointer-events: none;
 }
 
