@@ -118,10 +118,10 @@ a {
 
 .game-row {
   display: grid;
-  grid-template-columns: minmax(0, 0.9fr) minmax(380px, 1.1fr);
+  grid-template-columns: minmax(260px, 0.72fr) minmax(420px, 1.28fr);
   align-items: center;
-  gap: clamp(24px, 5vw, 72px);
-  padding: clamp(28px, 5vw, 56px) 0;
+  gap: clamp(32px, 5.5vw, 88px);
+  padding: clamp(34px, 5.5vw, 68px) 0;
 }
 
 .game-row + .game-row {
@@ -133,14 +133,15 @@ a {
 }
 
 .game-row h3 {
-  max-width: 8ch;
+  max-width: 10ch;
   margin: 0;
   font-family: "Google Sans Flex", Inter, ui-sans-serif, system-ui, sans-serif;
-  font-size: clamp(3.4rem, 8.5vw, 7rem);
-  font-weight: 900;
-  line-height: 0.9;
+  font-size: clamp(2.35rem, 5.2vw, 4.75rem);
+  font-weight: 750;
+  line-height: 0.98;
   letter-spacing: 0;
   text-transform: uppercase;
+  overflow-wrap: normal;
 }
 
 .game-row__media {
@@ -187,7 +188,7 @@ a {
 
   .game-row h3 {
     max-width: none;
-    font-size: clamp(2.9rem, 15vw, 5.6rem);
+    font-size: clamp(2.25rem, 10.5vw, 4.2rem);
   }
 
   .game-row__media {
