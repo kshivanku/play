@@ -20,12 +20,12 @@ function updateHero() {
   const progress = clamp(window.scrollY / scrollable, 0, 1);
   const eased = 1 - Math.pow(1 - progress, 3);
 
-  const startSize = Math.min(window.innerWidth * 0.46, window.innerHeight * 1.36);
+  const startSize = Math.min(window.innerWidth * 0.32, window.innerHeight * 1.16);
   const endSize = clamp(window.innerWidth * 0.16, 104, 220);
-  const fontSize = startSize + (endSize - startSize) * eased;
-  const titleWidth = 72 + 28 * eased;
+  let fontSize = startSize + (endSize - startSize) * eased;
+  const titleWidth = 94 + 4 * eased;
   const y = -window.innerHeight * 0.16 * eased;
-  const widthAxis = 48 + 18 * eased;
+  const widthAxis = 25 + 35 * eased;
   const upperAxis = 760 - 70 * eased;
   const ascenderAxis = 854 - 56 * eased;
 
@@ -36,9 +36,16 @@ function updateHero() {
   title.style.setProperty("--play-ytuc", upperAxis.toFixed(1));
   title.style.setProperty("--play-ytas", ascenderAxis.toFixed(1));
   title.style.setProperty("--play-progress", progress.toFixed(3));
+
+  const maxWidth = window.innerWidth * 0.98;
+  if (title.scrollWidth > maxWidth) {
+    fontSize *= maxWidth / title.scrollWidth;
+    title.style.setProperty("--play-font-size", `${fontSize}px`);
+  }
 }
 
 updateHero();
+document.fonts?.ready.then(updateHero);
 document.querySelectorAll("[data-game-video]").forEach((video) => {
   const key = video.dataset.gameVideo;
   if (videos[key]) video.src = videos[key];
