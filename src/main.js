@@ -30,19 +30,19 @@ function updateHero() {
   const upperAxis = 760 - 70 * eased;
   const ascenderAxis = 854 - 56 * eased;
 
-  title.style.setProperty("--play-font-size", `${fontSize}px`);
-  title.style.setProperty("--play-bar-height", `${barHeight}px`);
-  title.style.setProperty("--play-width", `${titleWidth}vw`);
-  title.style.setProperty("--play-y", "0px");
-  title.style.setProperty("--play-wdth", widthAxis.toFixed(1));
-  title.style.setProperty("--play-ytuc", upperAxis.toFixed(1));
-  title.style.setProperty("--play-ytas", ascenderAxis.toFixed(1));
-  title.style.setProperty("--play-progress", progress.toFixed(3));
+  hero.style.setProperty("--play-font-size", `${fontSize}px`);
+  hero.style.setProperty("--play-bar-height", `${barHeight}px`);
+  hero.style.setProperty("--play-width", `${titleWidth}vw`);
+  hero.style.setProperty("--play-y", "0px");
+  hero.style.setProperty("--play-wdth", widthAxis.toFixed(1));
+  hero.style.setProperty("--play-ytuc", upperAxis.toFixed(1));
+  hero.style.setProperty("--play-ytas", ascenderAxis.toFixed(1));
+  hero.style.setProperty("--play-progress", progress.toFixed(3));
 
   const maxWidth = window.innerWidth * 0.98;
   if (title.scrollWidth > maxWidth) {
     fontSize *= maxWidth / title.scrollWidth;
-    title.style.setProperty("--play-font-size", `${fontSize}px`);
+    hero.style.setProperty("--play-font-size", `${fontSize}px`);
   }
 }
 
