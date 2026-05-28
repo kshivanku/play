@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Antonio:wght@700&family=Inter:wght@500;650;750;800&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Antonio:wght@700&family=Inter:wght@500;650;750;800&family=Roboto+Flex:opsz,wdth,wght,YTAS,YTUC@8..144,25..151,100..1000,649..854,528..760&display=swap");
 
 :root {
   color: #0b0f18;
@@ -8,8 +8,11 @@
   font-synthesis: none;
   text-rendering: geometricPrecision;
   --play-font-size: 30vw;
-  --play-gap: 0px;
+  --play-width: 72vw;
   --play-y: 0px;
+  --play-wdth: 48;
+  --play-ytas: 854;
+  --play-ytuc: 760;
   --play-progress: 0;
 }
 
@@ -68,24 +71,29 @@ a {
 .play-title {
   position: relative;
   z-index: 1;
-  width: 100vw;
+  width: var(--play-width);
   min-height: 100svh;
   margin: 0;
-  padding: 0 clamp(10px, 2vw, 28px);
+  padding: 0;
   display: flex;
   align-items: center;
-  justify-content: center;
-  gap: var(--play-gap);
+  justify-content: space-between;
   color: #050505;
-  font-family: Antonio, Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+  font-family: "Roboto Flex", Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
   font-size: var(--play-font-size);
-  font-weight: 700;
-  line-height: 0.72;
+  font-weight: 1000;
+  font-stretch: 50%;
+  font-variation-settings:
+    "opsz" 144,
+    "wdth" var(--play-wdth),
+    "YTAS" var(--play-ytas),
+    "YTUC" var(--play-ytuc);
+  line-height: 0.68;
   letter-spacing: 0;
   text-transform: uppercase;
   transform: translateY(var(--play-y));
   white-space: nowrap;
-  will-change: font-size, gap, transform;
+  will-change: font-size, width, transform;
   pointer-events: none;
 }
 
@@ -156,7 +164,7 @@ a {
   }
 
   .play-title {
-    padding: 0 10px;
+    width: min(var(--play-width), 96vw);
   }
 
   .game-list {
