@@ -128,6 +128,11 @@ a {
   border-bottom: 1px solid rgba(248, 250, 246, 0.16);
 }
 
+.game-row:first-child,
+.game-row:last-child {
+  border-bottom: 0;
+}
+
 .game-row__copy {
   min-width: 0;
 }
