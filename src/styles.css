@@ -8,6 +8,7 @@
   font-synthesis: none;
   text-rendering: geometricPrecision;
   --play-font-size: 30vw;
+  --play-bar-height: calc(100svh - var(--games-peek));
   --play-width: 94vw;
   --play-y: 0px;
   --play-wdth: 25;
@@ -48,20 +49,24 @@ a {
 }
 
 .hero-sticky {
-  position: absolute;
-  inset: 0;
-  min-height: calc(100svh - var(--games-peek));
+  position: fixed;
+  z-index: 10;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: var(--play-bar-height);
   display: grid;
   place-items: center;
   overflow: hidden;
   pointer-events: none;
+  background: #0b0f18;
 }
 
 .play-title {
   position: relative;
   z-index: 1;
   width: var(--play-width);
-  min-height: calc(100svh - var(--games-peek));
+  height: var(--play-bar-height);
   margin: 0;
   padding: 0;
   display: flex;
@@ -82,7 +87,7 @@ a {
   text-transform: uppercase;
   transform: translateY(var(--play-y));
   white-space: nowrap;
-  will-change: font-size, width, transform;
+  will-change: font-size, width, height, transform;
   pointer-events: none;
 }
 

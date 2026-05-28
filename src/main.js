@@ -22,17 +22,18 @@ function updateHero() {
   const eased = 1 - Math.pow(1 - progress, 3);
 
   const startSize = Math.min(window.innerWidth * 0.32, heroHeight * 1.16);
-  const endSize = clamp(window.innerWidth * 0.16, 104, 220);
+  const endSize = clamp(window.innerWidth * 0.07, 64, 96);
   let fontSize = startSize + (endSize - startSize) * eased;
+  const barHeight = heroHeight + (100 - heroHeight) * eased;
   const titleWidth = 94 + 4 * eased;
-  const y = -heroHeight * 0.16 * eased;
   const widthAxis = 25 + 35 * eased;
   const upperAxis = 760 - 70 * eased;
   const ascenderAxis = 854 - 56 * eased;
 
   title.style.setProperty("--play-font-size", `${fontSize}px`);
+  title.style.setProperty("--play-bar-height", `${barHeight}px`);
   title.style.setProperty("--play-width", `${titleWidth}vw`);
-  title.style.setProperty("--play-y", `${y}px`);
+  title.style.setProperty("--play-y", "0px");
   title.style.setProperty("--play-wdth", widthAxis.toFixed(1));
   title.style.setProperty("--play-ytuc", upperAxis.toFixed(1));
   title.style.setProperty("--play-ytas", ascenderAxis.toFixed(1));
