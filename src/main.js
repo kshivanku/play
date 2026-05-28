@@ -1,6 +1,6 @@
 import "./styles.css";
-import beGratefulVideo from "../assets/begrateful.mov?url";
-import youAreMyTimerVideo from "../assets/youaremytimer.mov?url";
+import beGratefulVideo from "../assets/begrateful.mp4?url";
+import youAreMyTimerVideo from "../assets/youaremytimer.mp4?url";
 
 const hero = document.querySelector("[data-scroll-hero]");
 const title = document.querySelector("[data-play-title]");
