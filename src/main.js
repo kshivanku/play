@@ -12,6 +12,7 @@ const videos = {
 
 let introProgress = reduceMotion ? 1 : 0;
 let introStart = null;
+let didSetInitialScroll = false;
 
 function clamp(value, min, max) {
   return Math.max(min, Math.min(max, value));
@@ -47,7 +48,7 @@ function updateHero() {
   hero.style.setProperty("--play-ytuc", upperAxis.toFixed(1));
   hero.style.setProperty("--play-ytas", ascenderAxis.toFixed(1));
   hero.style.setProperty("--play-scale", introScale.toFixed(3));
-  hero.style.setProperty("--play-opacity", settle.toFixed(3));
+  hero.style.setProperty("--play-opacity", "1");
   hero.style.setProperty("--play-progress", progress.toFixed(3));
 
   const maxWidth = window.innerWidth * 0.98;
@@ -65,9 +66,18 @@ function animateIntro(timestamp) {
   if (introProgress < 1) requestAnimationFrame(animateIntro);
 }
 
+function setInitialScrollState() {
+  if (didSetInitialScroll || !hero || window.location.hash) return;
+  didSetInitialScroll = true;
+  if ("scrollRestoration" in history) history.scrollRestoration = "manual";
+  window.scrollTo({ top: hero.offsetHeight, left: 0, behavior: "auto" });
+}
+
+setInitialScrollState();
 updateHero();
 if (document.fonts?.ready) {
   document.fonts.ready.then(() => {
+    setInitialScrollState();
     updateHero();
     requestAnimationFrame(animateIntro);
   });
