@@ -109,7 +109,6 @@ a {
   margin: 0 auto;
   display: grid;
   gap: 0;
-  border-top: 1px solid rgba(248, 250, 246, 0.16);
 }
 
 .game-row {
@@ -118,12 +117,10 @@ a {
   align-items: center;
   gap: clamp(24px, 5vw, 72px);
   padding: clamp(28px, 5vw, 56px) 0;
-  border-bottom: 1px solid rgba(248, 250, 246, 0.16);
 }
 
-.game-row:first-child,
-.game-row:last-child {
-  border-bottom: 0;
+.game-row + .game-row {
+  border-top: 1px solid rgba(248, 250, 246, 0.16);
 }
 
 .game-row__copy {
@@ -168,7 +165,6 @@ a {
 
   .game-list {
     gap: 10px;
-    border-top: 0;
   }
 
   .game-row {
@@ -177,7 +173,10 @@ a {
     align-items: stretch;
     gap: 18px;
     padding: 0 0 42px;
-    border-bottom-color: rgba(248, 250, 246, 0.18);
+  }
+
+  .game-row + .game-row {
+    border-top-color: rgba(248, 250, 246, 0.18);
   }
 
   .game-row h3 {
