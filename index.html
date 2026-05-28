@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="A playable portfolio header for a collection of browser games."
+    />
+    <title>Play</title>
+    <script type="module" src="/src/main.js"></script>
+  </head>
+  <body>
+    <main>
+      <section class="hero" aria-label="Playable Play header">
+        <div class="hero__topbar">
+          <a class="brand" href="#top" aria-label="Play home">
+            <span class="brand__mark"></span>
+            Play
+          </a>
+          <a class="nav-link" href="#games">Games</a>
+        </div>
+
+        <div class="hero__stage" id="top">
+          <canvas id="play-canvas" aria-label="Playable maze spelling Play"></canvas>
+          <div class="hero__hud" aria-live="polite">
+            <button class="icon-button" id="reset-button" type="button" aria-label="Restart">
+              <span aria-hidden="true">↻</span>
+            </button>
+            <button class="motion-button" id="motion-button" type="button">
+              Start
+            </button>
+          </div>
+          <a class="scroll-cue" href="#games" aria-label="View games">
+            <span></span>
+          </a>
+        </div>
+      </section>
+
+      <section class="games" id="games" aria-labelledby="games-title">
+        <div class="section-heading">
+          <p>Selected work</p>
+          <h1 id="games-title">Games</h1>
+        </div>
+
+        <div class="game-grid">
+          <article class="game-card">
+            <div class="game-card__preview preview-a"></div>
+            <div class="game-card__body">
+              <p class="game-card__type">Puzzle</p>
+              <h2>Orbit Shift</h2>
+              <p>Redirect momentum through compact orbital boards.</p>
+              <a href="#" aria-label="Open Orbit Shift">Open</a>
+            </div>
+          </article>
+
+          <article class="game-card">
+            <div class="game-card__preview preview-b"></div>
+            <div class="game-card__body">
+              <p class="game-card__type">Arcade</p>
+              <h2>Line Runner</h2>
+              <p>Thread quick decisions through a reactive course.</p>
+              <a href="#" aria-label="Open Line Runner">Open</a>
+            </div>
+          </article>
+
+          <article class="game-card">
+            <div class="game-card__preview preview-c"></div>
+            <div class="game-card__body">
+              <p class="game-card__type">Strategy</p>
+              <h2>Gridfall</h2>
+              <p>Plan around shifting tiles before the board closes in.</p>
+              <a href="#" aria-label="Open Gridfall">Open</a>
+            </div>
+          </article>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>
