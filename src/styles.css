@@ -105,8 +105,7 @@ a {
 }
 
 .hero-sticky {
-  position: fixed;
-  z-index: 5;
+  position: absolute;
   inset: 0;
   min-height: 100svh;
   display: grid;
@@ -138,7 +137,7 @@ a {
   align-items: center;
   justify-content: center;
   gap: var(--play-gap);
-  color: #f7f7f4;
+  color: #050505;
   font-family: Antonio, Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
   font-size: var(--play-font-size);
   font-weight: 700;
@@ -147,7 +146,6 @@ a {
   text-transform: uppercase;
   transform: translateY(var(--play-y));
   white-space: nowrap;
-  mix-blend-mode: difference;
   will-change: font-size, gap, transform;
   pointer-events: none;
 }
