@@ -5,42 +5,38 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta
       name="description"
-      content="A playable portfolio header for a collection of browser games."
+      content="A modern portfolio of browser games by Shivanku Kumar."
     />
     <title>Play</title>
     <script type="module" src="/src/main.js"></script>
   </head>
   <body>
-    <main>
-      <section class="hero" aria-label="Playable Play header">
-        <div class="hero__topbar">
-          <a class="brand" href="#top" aria-label="Play home">
-            <span class="brand__mark"></span>
-            Play
-          </a>
-          <a class="nav-link" href="#games">Games</a>
-        </div>
+    <header class="site-header">
+      <a class="brand" href="#top" aria-label="Play home">
+        <span class="brand__dot brand__dot--blue"></span>
+        <span class="brand__dot brand__dot--green"></span>
+        <span class="brand__dot brand__dot--red"></span>
+        <span>Play</span>
+      </a>
+      <a class="nav-link" href="#games">Games</a>
+    </header>
 
-        <div class="hero__stage" id="top">
-          <canvas id="play-canvas" aria-label="Playable maze spelling Play"></canvas>
-          <div class="hero__hud" aria-live="polite">
-            <button class="icon-button" id="reset-button" type="button" aria-label="Restart">
-              <span aria-hidden="true">↻</span>
-            </button>
-            <button class="motion-button" id="motion-button" type="button">
-              Start
-            </button>
-          </div>
-          <a class="scroll-cue" href="#games" aria-label="View games">
-            <span></span>
-          </a>
+    <main id="top">
+      <section class="hero-scroll" data-scroll-hero aria-label="Play hero">
+        <div class="hero-sticky">
+          <h1 class="play-title" data-play-title aria-label="Play">
+            <span>P</span>
+            <span>L</span>
+            <span>A</span>
+            <span>Y</span>
+          </h1>
         </div>
       </section>
 
       <section class="games" id="games" aria-labelledby="games-title">
         <div class="section-heading">
           <p>Selected work</p>
-          <h1 id="games-title">Games</h1>
+          <h2 id="games-title">Games</h2>
         </div>
 
         <div class="game-grid">
@@ -48,7 +44,7 @@
             <div class="game-card__preview preview-a"></div>
             <div class="game-card__body">
               <p class="game-card__type">Puzzle</p>
-              <h2>Orbit Shift</h2>
+              <h3>Orbit Shift</h3>
               <p>Redirect momentum through compact orbital boards.</p>
               <a href="#" aria-label="Open Orbit Shift">Open</a>
             </div>
@@ -58,7 +54,7 @@
             <div class="game-card__preview preview-b"></div>
             <div class="game-card__body">
               <p class="game-card__type">Arcade</p>
-              <h2>Line Runner</h2>
+              <h3>Line Runner</h3>
               <p>Thread quick decisions through a reactive course.</p>
               <a href="#" aria-label="Open Line Runner">Open</a>
             </div>
@@ -68,7 +64,7 @@
             <div class="game-card__preview preview-c"></div>
             <div class="game-card__body">
               <p class="game-card__type">Strategy</p>
-              <h2>Gridfall</h2>
+              <h3>Gridfall</h3>
               <p>Plan around shifting tiles before the board closes in.</p>
               <a href="#" aria-label="Open Gridfall">Open</a>
             </div>
