@@ -1,11 +1,13 @@
 import "./styles.css";
 import beGratefulVideo from "../assets/begrateful.mp4?url";
+import scrollBreakVideo from "../assets/scrollbreak.mp4?url";
 import youAreMyTimerVideo from "../assets/youaremytimer.mp4?url";
 
 const hero = document.querySelector("[data-scroll-hero]");
 const title = document.querySelector("[data-play-title]");
 const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 const videos = {
+  "scroll-break": scrollBreakVideo,
   "be-grateful": beGratefulVideo,
   "you-are-my-timer": youAreMyTimerVideo,
 };
